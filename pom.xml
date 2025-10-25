@@ -1,153 +1,166 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	
-	<groupId>com.mt</groupId>
-	<artifactId>maven-web-application</artifactId>
-	<packaging>war</packaging>
-	<version>0.0.1-SNAPSHOT</version>
-	
-	<name>maven-web-application</name>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/maven-v4_0_0.xsd">
 
-	<description>Maven Web Project for Java Project</description>
+    <modelVersion>4.0.0</modelVersion>
 
-	<organization>
-		<name>Mithun Technologies</name>
-		<url>http://mithuntechnologies.com/</url>
-	</organization>
+    <groupId>com.mt</groupId>
+    <artifactId>maven-web-application</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
 
-	<properties>
-		<jdk.version>1.8</jdk.version>
-		<spring.version>5.1.2.RELEASE</spring.version>
-		<junit.version>4.11</junit.version>
-		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://13.126.156.237:9000/</sonar.host.url>
-		<sonar.login>squ_6b2876cee9ba3d623a8e96ca2141e475a28594d1</sonar.login>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <name>maven-web-application</name>
+    <description>Maven Web Project for Java 21</description>
 
-	</properties>
+    <organization>
+        <name>Mithun Technologies</name>
+        <url>http://mithuntechnologies.com/</url>
+    </organization>
 
-	<dependencies>
-		
-		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-			<version>20160212</version>
-		</dependency>
-		
-		<!-- test dependencies -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
+    <properties>
+        <!-- ✅ Use modern versions -->
+        <jdk.version>21</jdk.version>
+        <spring.version>5.3.33</spring.version>
+        <junit.version>4.13.2</junit.version>
+        <log4j.version>1.2.17</log4j.version>
 
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
-			<scope>provided</scope>
-		</dependency>
+        <!-- ✅ SonarQube properties -->
+        <sonar.host.url>http://http://18.191.123.250:9000//</sonar.host.url>
+	 <sonar.login>squ_21f4b5d4aed0044f05971d4ba5ee4eb08bcfdf37</sonar.login>
 
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<version>1.9.5</version>
-			<scope>test</scope>
-		</dependency>
+        <!-- Encoding -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
 
-		<!-- compile dependencies -->
+    <dependencies>
 
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<dependency>
-    		<groupId>org.springframework</groupId>
-    		<artifactId>spring-web</artifactId>
-    		<version>${spring.version}</version>
-  		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		
-		<!-- provided dependencies -->
+        <!-- JSON library -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20231013</version>
+        </dependency>
 
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
-			<scope>provided</scope>
-		</dependency>
-		
-	</dependencies>
-	
-	<distributionManagement>
-	
-	    <repository>
-	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://13.126.156.237:8081/repository/flipkart-release/</url>
-	    </repository>
-	    
-	    <snapshotRepository>
-	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://13.126.156.237:8081/repository/flipkart-snapshot/</url>
-	    </snapshotRepository>
-	    
-	</distributionManagement>
-	
-	<build>
-		<finalName>maven-web-application</finalName>
-		
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version>
-				<configuration>
-					<source>${jdk.version}</source>
-					<target>${jdk.version}</target>
-				</configuration>
-			</plugin>
+        <!-- ✅ JUnit for testing -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
 
-			<plugin>
-				<groupId>org.eclipse.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>9.2.11.v20150529</version>
-				<configuration>
-					<scanIntervalSeconds>10</scanIntervalSeconds>
-					<webApp>
-						<contextPath>/maven-web-application</contextPath>
-					</webApp>
-				</configuration>
-			</plugin>
+        <!-- ✅ Mockito for unit tests -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>5.11.0</version>
+            <scope>test</scope>
+        </dependency>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.9</version>
-				<configuration>
-					<downloadSources>true</downloadSources>
-					<downloadJavadocs>true</downloadJavadocs>
-					<wtpversion>2.0</wtpversion>
-					<wtpContextName>maven-web-application</wtpContextName>
-				</configuration>
-			</plugin>
-			
-</plugins>
-	</build>
-	
-	
+        <!-- ✅ Spring Framework dependencies -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!-- ✅ Servlet API (provided by container) -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- ✅ Logging -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <!-- ✅ Nexus Configuration -->
+    <distributionManagement>
+        <repository>
+            <id>nexus</id>
+            <name>Mithun Technologies Releases Nexus Repository</name>
+            <url>http://13.126.156.237:8081/repository/flipkart-release/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>nexus</id>
+            <name>Mithun Technologies Snapshot Nexus Repository</name>
+            <url>http://13.126.156.237:8081/repository/flipkart-snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <!-- ✅ Build Section -->
+    <build>
+        <finalName>maven-web-application</finalName>
+
+        <plugins>
+
+            <!-- ✅ Updated compiler plugin for Java 21 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+
+            <!-- ✅ Updated Jetty plugin -->
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.4.53.v20231009</version>
+                <configuration>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <webApp>
+                        <contextPath>/maven-web-application</contextPath>
+                    </webApp>
+                </configuration>
+            </plugin>
+
+            <!-- Eclipse IDE integration -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.10</version>
+                <configuration>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>true</downloadJavadocs>
+                    <wtpversion>2.0</wtpversion>
+                    <wtpContextName>maven-web-application</wtpContextName>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
 </project>
+
