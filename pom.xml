@@ -27,7 +27,7 @@
 
         <!-- ✅ SonarQube properties -->
         <sonar.host.url>http://3.15.158.215:9000//</sonar.host.url>
-	 <sonar.login>squ_21f4b5d4aed0044f05971d4ba5ee4eb08bcfdf37</sonar.login>
+	 <sonar.login>squ_fc04c65dfe971d13a1b608904a8ff971b92fbdd1</sonar.login>
 
         <!-- Encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
