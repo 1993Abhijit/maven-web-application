@@ -26,7 +26,7 @@
         <log4j.version>1.2.17</log4j.version>
 
         <!-- ✅ SonarQube properties -->
-        <sonar.host.url>http://http://18.191.123.250:9000//</sonar.host.url>
+        <sonar.host.url>http://3.15.158.215/:9000//</sonar.host.url>
 	 <sonar.login>squ_21f4b5d4aed0044f05971d4ba5ee4eb08bcfdf37</sonar.login>
 
         <!-- Encoding -->
